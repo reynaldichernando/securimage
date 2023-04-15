@@ -73,6 +73,9 @@ $img = new Securimage();
 // set namespace if supplied to script via HTTP GET
 if (!empty($_GET['namespace'])) $img->setNamespace($_GET['namespace']);
 
+$img->case_sensitive = true;
+$img->num_lines = 0;
+$img->perturbation = 0.5;
 
 $img->show();  // outputs the image and content headers to the browser
 // alternate use:

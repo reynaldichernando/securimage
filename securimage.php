@@ -2134,7 +2134,7 @@ class Securimage
             $font     = $this->ttfFile(); // select random font from list for this character
             $fonts[]  = $font;
             $angles[] = $angle;  // the angle of this character
-            $dist     = mt_rand(-2, 0) * $scale; // random distance between this and next character
+            $dist     = 1.8 * $scale; // random distance between this and next character
             $distance[] = $dist;
             $char     = $this->substr($captcha_text, $c, 1); // the character to draw for this sequence
 
@@ -2175,7 +2175,7 @@ class Securimage
         };
 
         $cx = floor($width / 2 - ($txtWid / 2));
-        $x  = mt_rand(5 * $scale, max($cx * 2 - (5 * $scale), 5 * $scale));
+        $x  = $cx;
 
         if ($this->use_random_baseline) {
             $y = mt_rand($dims[0][1], $height - 10);
